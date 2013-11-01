@@ -1,0 +1,9 @@
+C:\Work\First\First.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\First\First.Tests\bin\Debug\First.Tests.dll
+C:\Work\First\First.Tests\bin\Debug\First.Tests.pdb
+C:\Work\First\First.Tests\bin\Debug\First.dll
+C:\Work\First\First.Tests\bin\Debug\nunit.framework.dll
+C:\Work\First\First.Tests\bin\Debug\First.pdb
+C:\Work\First\First.Tests\bin\Debug\nunit.framework.xml
+C:\Work\First\First.Tests\obj\Debug\First.Tests.dll
+C:\Work\First\First.Tests\obj\Debug\First.Tests.pdb
