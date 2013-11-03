@@ -9,12 +9,12 @@ namespace Second.Tests
     public class PinyinServiceTest
     {
         private PinyinService _pinyin;
-        private Mock<IPinyinDAO> _mock;
+        private Mock<IPinyinRepository> _mock;
 
         [SetUp]
         public void SetUp()
         {
-            _mock = new Mock<IPinyinDAO>();
+            _mock = new Mock<IPinyinRepository>();
             _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("章")).Returns("zhang");
             _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("子")).Returns("zi");
             _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("怡")).Returns("yi");

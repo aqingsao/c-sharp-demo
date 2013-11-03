@@ -10,7 +10,7 @@ namespace Second.Tests
     public class PinyinServiceFakeObjectTest
     {
         private PinyinService pinyinService;
-        private IPinyinDAO pinyinRepository;
+        private IPinyinRepository pinyinRepository;
 
         [SetUp]
         public void SetUp()
@@ -44,7 +44,7 @@ namespace Second.Tests
             Assert.That(pinyinService.GetPinyinHeader("武曌"), Is.EqualTo("W?"));
         }
 
-        public class FakePinyinRepository : IPinyinDAO
+        public class FakePinyinRepository : IPinyinRepository
         {
             private Dictionary<string, string> _dictionary = new Dictionary<string, string>();
 

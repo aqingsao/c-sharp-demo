@@ -10,21 +10,21 @@ namespace Second
 {
     public class PinyinService
     {
-        private IPinyinDAO _pinyinDao;
+        private IPinyinRepository pinyinRepository;
 
-        public PinyinService(): this(new PinyinDAO())
+        public PinyinService(): this(new PinyinRepository())
         {
         }
-        public PinyinService(IPinyinDAO pinyinDao)
+        public PinyinService(IPinyinRepository pinyinRepository)
         {
-            _pinyinDao = pinyinDao;
+            this.pinyinRepository = pinyinRepository;
         }
 
         public string GetPinyin(string chineseName)
         {
             List<char> chineseWords = chineseName.ToCharArray().ToList();
             List<string> pinyinWords = chineseWords
-                .ConvertAll(new Converter<char, string>(chineseWord => _pinyinDao.GetPinyin(chineseWord.ToString()) ?? "?"))
+                .ConvertAll(new Converter<char, string>(chineseWord => pinyinRepository.GetPinyin(chineseWord.ToString()) ?? "?"))
                 .ConvertAll(new Converter<string, string>(ToTitleCase));
 
             return string.Join("", pinyinWords);
@@ -34,7 +34,7 @@ namespace Second
         {
             List<char> chineseWords = chineseName.ToCharArray().ToList();
             List<string> pinyinWords = chineseWords
-                .ConvertAll(new Converter<char, string>(chineseWord => _pinyinDao.GetPinyin(chineseWord.ToString()) ?? "?"))
+                .ConvertAll(new Converter<char, string>(chineseWord => pinyinRepository.GetPinyin(chineseWord.ToString()) ?? "?"))
                 .ConvertAll(new Converter<string, string>(pinyin=>pinyin.First().ToString()))
                 .ConvertAll(new Converter<string, string>(ToTitleCase));
 
@@ -43,7 +43,7 @@ namespace Second
 
         public void UpdatePinyin(string chineseWord, string pinyin)
         {
-            _pinyinDao.UpdatePinyin(chineseWord, pinyin);
+            pinyinRepository.UpdatePinyin(chineseWord, pinyin);
         }
 
         private string ToTitleCase(string input)

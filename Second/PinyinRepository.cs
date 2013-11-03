@@ -2,13 +2,13 @@ using System.Collections.Generic;
 
 namespace Second
 {
-    public interface IPinyinDAO
+    public interface IPinyinRepository
     {
         string GetPinyin(string chineseWord);
         void UpdatePinyin(string chineseWord, string pinyin);
     }
 
-    public class PinyinDAO : IPinyinDAO
+    public class PinyinRepository : IPinyinRepository
     {
         private Dictionary<string, string> _dictionary = new Dictionary<string, string>();
 
@@ -16,7 +16,7 @@ namespace Second
         {
             get; set;
         }
-        public PinyinDAO()
+        public PinyinRepository()
         {
             _dictionary.Add("уб", "zhang");
             _dictionary.Add("вс", "zi");

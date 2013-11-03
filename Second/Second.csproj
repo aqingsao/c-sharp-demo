@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PinyinService.cs" />
-    <Compile Include="PinyinDAO.cs" />
+    <Compile Include="PinyinRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
