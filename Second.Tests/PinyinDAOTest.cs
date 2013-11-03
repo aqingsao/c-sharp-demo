@@ -17,9 +17,9 @@ namespace Second.Tests
         }
         
         [Test()]
-        public void should_return_Questionmark_when_given_笊()
+        public void should_return_null_when_given_笊()
         {
-            Assert.That(_pinyinDao.GetPinyin("笊"), Is.EqualTo("?"));
+            Assert.That(_pinyinDao.GetPinyin("笊"), Is.Null);
         }
 
         [Test]

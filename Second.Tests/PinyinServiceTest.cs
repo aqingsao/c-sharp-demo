@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Moq.Protected;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
@@ -24,7 +19,7 @@ namespace Second.Tests
             _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("子")).Returns("zi");
             _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("怡")).Returns("yi");
             _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("武")).Returns("wu");
-            _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("笊")).Returns("?");
+            _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("曌")).Returns((string) null);
 
             _pinyin = new PinyinService(_mock.Object);
         }

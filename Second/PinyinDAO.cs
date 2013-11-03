@@ -33,7 +33,7 @@ namespace Second
             catch (System.Exception)
             {
                 
-                return "?";
+                return null;
             }
         }
 
