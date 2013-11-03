@@ -11,9 +11,9 @@ using Assert = NUnit.Framework.Assert;
 namespace Second.Tests
 {
     [TestFixture]
-    public class PinyinTest
+    public class PinyinServiceTest
     {
-        private Pinyin _pinyin;
+        private PinyinService _pinyin;
         private Mock<IPinyinDAO> _mock;
 
         [SetUp]
@@ -26,7 +26,7 @@ namespace Second.Tests
             _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("武")).Returns("wu");
             _mock.Setup(pinyinProperty => pinyinProperty.GetPinyin("笊")).Returns("?");
 
-            _pinyin = new Pinyin(_mock.Object);
+            _pinyin = new PinyinService(_mock.Object);
         }
 
         [Test]

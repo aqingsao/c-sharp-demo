@@ -8,11 +8,11 @@ using System.Threading;
 
 namespace Second
 {
-    public class Pinyin
+    public class PinyinService
     {
         private IPinyinDAO _pinyinDao;
 
-        public Pinyin(IPinyinDAO pinyinDao)
+        public PinyinService(IPinyinDAO pinyinDao)
         {
             _pinyinDao = pinyinDao;
         }
