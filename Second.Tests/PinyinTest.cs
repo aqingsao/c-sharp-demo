@@ -2,9 +2,11 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Moq.Protected;
 using NUnit.Framework;
+using Assert = NUnit.Framework.Assert;
 
 namespace Second.Tests
 {
@@ -52,20 +54,13 @@ namespace Second.Tests
         }
 
         [Test]
-        [ExpectedException(typeof(Exception))]
+        [NUnit.Framework.ExpectedException(typeof(Exception))]
         public void should_update_pinyin_of_朝_to_chao()
         {
             _mock.Setup(pinyinProperty => pinyinProperty.UpdatePinyin("朝", "chao")).Throws(new Exception());
             _pinyin.UpdatePinyin("朝", "chao");
 
             _mock.Verify(pinyinProperty=>pinyinProperty.UpdatePinyin("朝", "chao"));
-        }
-
-        [Test]
-        public void should_NAME()
-        {
-            Mock<PinyinDAO> _mock = new Mock<PinyinDAO>(); ;
-            _mock.Protected().Setup<int>("Property").Returns(1);
         }
     }
 }

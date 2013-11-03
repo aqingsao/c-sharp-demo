@@ -13,6 +13,12 @@ namespace First.Tests
             stringParser = new StringParser();
         }
 
+        [SetUp]
+        [TestFixtureSetUp]
+        public void SetUp()
+        {
+            
+        }
         [Test]
         public void should_return_0_when_given_null()
         {

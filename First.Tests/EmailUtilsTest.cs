@@ -12,7 +12,7 @@ namespace First.Tests
         [Test]
         public void should_return_true_when_given_a_at_b_dot_com()
         {
-            Assert.IsTrue(EmailUtils.isValid("b@b.com"));
+            Assert.IsTrue(EmailUtils.isValid("a@b.com"));
         }
 
         [Test]

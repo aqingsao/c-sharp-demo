@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <SolutionFile Include="../c-sharp-demo.sln"/>
+    <BuildDir Include="build\"/>
+  </ItemGroup>
+  <PropertyGroup>
+    <Configuration Condition="$(Configuration)==''">Release</Configuration>
+    <BuildPlatform Condition="$(BuildPlatform)==''">Any CPU</BuildPlatform>
+
+    <NUnitConsole>"C:\Program Files\NUnit 2.6.3\bin\nunit-console.exe"</NUnitConsole>
+    <UnitTestsDLL>@(BuildDir)Second.Tests.dll</UnitTestsDLL>
+    <TestResultsPath>@(BuildDir)TestResults.xml</TestResultsPath>
+  </PropertyGroup>
+
+  <Target Name="Init" DependsOnTargets="Clean">
+    <MakeDir Directories="$(BuilDir)"/>
+  </Target>
+
+  <Target Name="Clean">
+    <RemoveDir Directories="$(BuilDir)"/>
+  </Target>
+
+  <Target Name="Compile" DependsOnTargets="Init">
+    <MSBuild Projects="@(SolutionFile)" Targets="Rebuild" 
+             Properties="OutDir=%(BuildDir.FullPath);Configuration=$(Configuration);Platform=$(BuildPlatform)"/>
+  </Target>
+
+  <Target Name="UnitTests" DependsOnTargets="Compile">
+    <Exec Command='$(NUnitConsole) $(UnitTestsDLL)'/>
+  </Target>
+
+  <Target Name='Test'>
+    <Exec Command='echo $(TestDir)'/>
+  </Target>
+</Project>

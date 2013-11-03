@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace Second.Tests
 {
@@ -22,6 +23,7 @@ namespace Second.Tests
         }
 
         [Test]
+        [ExpectedException(typeof(Exception), ExpectedMessage = "")]
         public void should_update_pinyin_of_朝_to_chao()
         {
             _pinyinDao.UpdatePinyin("朝", "chao");
