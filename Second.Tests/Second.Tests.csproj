@@ -59,7 +59,7 @@
     <Compile Include="PinyinServiceIntegrationTest.cs" />
     <Compile Include="PinyinServiceFakeObjectTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PinyinDAOTest.cs" />
+    <Compile Include="PinyinRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Second\Second.csproj">
