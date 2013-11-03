@@ -27,7 +27,7 @@
   </Target>
 
   <Target Name="UnitTests" DependsOnTargets="Compile">
-    <Exec Command='$(NUnitConsole) $(UnitTestsDLL)'/>
+    <Exec Command='$(NUnitConsole) $(UnitTestsDLL) /xml=$(TestResultsPath)'/>
   </Target>
 
   <Target Name='Test'>

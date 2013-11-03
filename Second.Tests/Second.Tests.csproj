@@ -55,7 +55,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PinyinTest.cs" />
+    <Compile Include="PinyinServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PinyinDAOTest.cs" />
   </ItemGroup>
