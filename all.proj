@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="Init">
   <ItemGroup>
     <SolutionFile Include="c-sharp-demo.sln"/>
     <BuildDir Include="build\"/>
