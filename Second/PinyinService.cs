@@ -24,10 +24,8 @@ namespace Second
         {
             List<char> chineseWords = chineseName.ToCharArray().ToList();
             List<string> pinyinWords = chineseWords
-                .ConvertAll(new Converter<char, string>(chineseWord =>
-                {
-                    return ToTitleCase(_pinyinDao.GetPinyin(chineseWord.ToString()) ?? "?");
-                }));
+                .ConvertAll(new Converter<char, string>(chineseWord => _pinyinDao.GetPinyin(chineseWord.ToString()) ?? "?"))
+                .ConvertAll(new Converter<string, string>(ToTitleCase));
 
             return string.Join("", pinyinWords);
         }
@@ -36,11 +34,9 @@ namespace Second
         {
             List<char> chineseWords = chineseName.ToCharArray().ToList();
             List<string> pinyinWords = chineseWords
-                .ConvertAll(new Converter<char, string>(chineseWord =>
-                {
-                    string pinyin = _pinyinDao.GetPinyin(chineseWord.ToString()) ?? "?";
-                    return ToTitleCase(pinyin.First().ToString());
-                }));
+                .ConvertAll(new Converter<char, string>(chineseWord => _pinyinDao.GetPinyin(chineseWord.ToString()) ?? "?"))
+                .ConvertAll(new Converter<string, string>(pinyin=>pinyin.First().ToString()))
+                .ConvertAll(new Converter<string, string>(ToTitleCase));
 
             return string.Join("", pinyinWords);
         }
