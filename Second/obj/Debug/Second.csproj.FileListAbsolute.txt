@@ -1,5 +1,0 @@
-C:\Work\First\Second\bin\Debug\Second.dll
-C:\Work\First\Second\bin\Debug\Second.pdb
-C:\Work\First\Second\obj\Debug\ResolveAssemblyReference.cache
-C:\Work\First\Second\obj\Debug\Second.dll
-C:\Work\First\Second\obj\Debug\Second.pdb
