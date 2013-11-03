@@ -7,3 +7,5 @@ Second.Tests/obj/*
 Second/bin/*
 Second/obj/*
 build/*
+*.DotSettings.user
+*.suo
