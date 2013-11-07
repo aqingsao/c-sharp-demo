@@ -43,7 +43,7 @@ namespace First.Tests
             Assert.AreEqual(3, stringParser.ParseAndSum("1,2"));
         }
 
-        [Test, ExpectedException(typeof(FormatException), ExpectedMessage = "Invalid input")]
+        [Test, ExpectedException(typeof(Exception), ExpectedMessage = "Please input a valid string")]
         public void should_throw_exception_when_given_a()
         {
             Assert.AreEqual(3, stringParser.ParseAndSum("a"));

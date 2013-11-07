@@ -15,7 +15,14 @@ namespace First
             string[] strings = str.Split(',');
             for (int i = 0; i < strings.Length; i++)
             {
-                total += Int32.Parse(strings[i]);
+                try
+                {
+                    total += Int32.Parse(strings[i]);
+                }
+                catch (Exception)
+                {
+                    throw new Exception("Please input a valid string");
+                }
             }
             return total;
         }
