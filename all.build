@@ -10,7 +10,7 @@
     <BuildPlatform Condition="$(BuildPlatform)==''">Any CPU</BuildPlatform>
 
     <NUnitConsole>"C:\Program Files\NUnit 2.6.3\bin\nunit-console.exe"</NUnitConsole>
-    <UnitTestsDLL>@(BuildDir)Second.Tests.dll</UnitTestsDLL>
+    <UnitTestsDLL>@(BuildDir)First.Tests.dll @(BuildDir)Second.Tests.dll</UnitTestsDLL>
     <TestResultsPath>@(BuildDir)TestResults.xml</TestResultsPath>
   </PropertyGroup>
 
